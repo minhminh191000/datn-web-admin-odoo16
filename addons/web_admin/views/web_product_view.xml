@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_web_product_tree">
+        <field name="name">web.product.tree</field>
+        <field name="model">web.product</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="rate"/>
+                <field name="price"/>
+                <field name="category_id"/>
+                <field name="status"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_web_product_form">
+            <field name="name">web.product.form</field>
+            <field name="model">web.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image_html" widget="html" class="oe_avatar" options="{'sanitize': False}" />
+                        <div class="oe_title">
+                            <h1 class="d-flex flex-row">
+                                <field name="name" placeholder="Product's Name" required="True" style="font-size: min(4vw, 2.6rem);"/>
+                            </h1>
+                            <field name="category_id" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="rate"/>
+                                <field name="price"/>
+                            </group>
+                            <group>
+                                <field name="status"/>
+                                <field name="url_img"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_web_product_search">
+            <field name="name">web.product.search</field>
+            <field name="model">web.product</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name = "name"/>
+                    <field name = "rate"/>
+                    <field name = "price"/>
+                    <!-- Define your search filters here if needed -->
+                </search>
+            </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_web_product">
+            <field name="name">Products</field>
+            <field name="res_model">web.product</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <!-- You can add other options here like domain, context, etc. -->
+    </record>
+
+</odoo>

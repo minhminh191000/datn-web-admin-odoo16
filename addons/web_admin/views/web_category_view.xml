@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+        <!-- Tree View -->
+        <record model="ir.ui.view" id="view_web_category_tree">
+            <field name="name">web.category.tree</field>
+            <field name="model">web.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="view_web_category_form">
+            <field name="name">web.category.form</field>
+            <field name="model">web.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image_html" widget="html" class="oe_avatar" options="{'sanitize': False}" />
+                        <div class="oe_title">
+                            <h1 class="d-flex flex-row">
+                                <field name="name" placeholder="Category's Name" required="True" style="font-size: min(4vw, 2.6rem);"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="status"/>
+                            <field name="url_img"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record model="ir.ui.view" id="view_web_category_search">
+            <field name="name">web.category.search</field>
+            <field name="model">web.category</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="action_web_category">
+            <field name="name">Categories</field>
+            <field name="res_model">web.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_web_category_tree"/>
+            <field name="search_view_id" ref="view_web_category_search"/>
+        </record>
+
+</odoo>

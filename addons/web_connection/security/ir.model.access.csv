@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+web_connection_group_no_one_access,Web Connectiion Access,model_web_connection,base.group_no_one,1,1,1,1

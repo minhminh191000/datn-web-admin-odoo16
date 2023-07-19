@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="web_root_menuitem"
+              name="Web Connections"
+              sequence="99"
+    />
+
+    <menuitem id="web_config_menuitem"
+              name="Connections"
+              action="web_config_view_action"
+              parent="web_root_menuitem"
+              groups="base.group_no_one"
+              sequence="10"/>
+</odoo>
+<!--              web_icon="bss_magento_connection,static/description/icon.png"-->
+<!--              groups="bss_order.store_pickup_role_admin"-->

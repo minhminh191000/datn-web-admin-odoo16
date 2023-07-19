@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="web_admin_root" name="Web Admin" sequence="99" />
+
+    <menuitem id="menu_web_product"
+          name="Product"
+          action="action_web_product"
+          parent="web_admin_root"
+          sequence="10"/>
+
+     <menuitem id="menu_web_category"
+               name="Categories"
+               parent="web_admin_root"
+               action="action_web_category"/>
+
+</odoo>
