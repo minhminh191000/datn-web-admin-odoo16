@@ -10,6 +10,7 @@
                     <field name="name"/>
                     <field name="description"/>
                     <field name="status"/>
+                    <field name="code" options="{'color_field': 'color'}"/>
                 </tree>
             </field>
         </record>
@@ -28,6 +29,7 @@
                             </h1>
                         </div>
                         <group>
+                            <field name="code" options="{'color_field': 'color'}"/>
                             <field name="status"/>
                             <field name="url_img"/>
                             <field name="description"/>
